@@ -1,8 +1,5 @@
-const createServer = require("./core/services/createServer");
+require('dotenv').config();
+const createServer = require('./core/services/createServer');
+const routes = require('./core/routes'); // ./core/routes => ./core/routes/index.js
 
-const route = {
-  path: "/custom-path",
-  content: "<h1>Welcome to /custom-path</h1>",
-};
-
-createServer({ routes: route, port: 3000 });
+createServer({ routes, port: 3000 });
